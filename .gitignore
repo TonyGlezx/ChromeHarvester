@@ -1,0 +1,11 @@
+# Ignore Python virtual environment
+.venv/
+
+# Ignore Node.js modules
+node_modules/
+
+# Ignore your database configuration file
+dbconfig.json
+
+# Ignore Node.js package lock file
+package-lock.json
