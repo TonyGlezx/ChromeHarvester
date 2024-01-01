@@ -4,10 +4,10 @@ Welcome to ChromeHarvester - your sleek and powerful tool for mining the depths 
 
 # Features **✨
 
-📄 **Data Extraction:** Get the URLs and full HTML source from all your open Chrome tabs.
-🌐 **Endpoint Integration:** Effortlessly post data to your specified REST API endpoint.
-💾 **Database Storage:** Seamlessly save data to your MySQL database.
-⚙️ **Customizable:** Flexible configurations to fit your workflow.
+📄 **Data Extraction:** Get the URLs and full HTML source from all your open Chrome tabs.  
+🌐 **Endpoint Integration:** Effortlessly post data to your specified REST API endpoint.  
+💾 **Database Storage:** Seamlessly save data to your MySQL database.  
+⚙️ **Customizable:** Flexible configurations to fit your workflow.  
 
 # **Getting Started **🏁
 

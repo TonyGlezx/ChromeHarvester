@@ -1,0 +1,34 @@
+# DynamicConfig: 🧰 A robust and elegant configuration class for managing OpenAI-related settings.
+# Utilizes Pydantic for validation, ensuring type correctness and mandatory field presence. 🛡️
+
+# Singleton pattern: 🕒 Ensures that only one instance of DynamicConfig is created.
+# This pattern prevents multiple configurations from being loaded, maintaining consistency. 🚫
+
+# ClassVar: 📝 Used for defining class-level variables that are not Pydantic fields. 🏗️
+
+# BaseModel fields: 📊 Defined with types and default values.
+# Required fields (like 'api_key') are explicitly stated, ensuring they are provided in the TOML file. 🔑
+
+# logger method: 📢 Provides a consistent logging interface across the application.
+# Utilizes Python's standard logging library for versatile logging management. 📜
+
+# __init__: 🚀 Custom initializer to enforce the singleton pattern.
+# Raises an exception if an instance already exists, safeguarding against multiple instantiations. 🚷
+
+# get_instance: 🔍 A class method to retrieve the singleton instance.
+# Ensures that DynamicConfig is properly initialized before being accessed. 👀
+
+# load_from_toml: 📂 Class method to load configuration from a TOML file.
+# Handles file loading errors gracefully and validates the content before creating an instance. 🌐
+
+# Error handling: 🚧 Utilizes try-except blocks to gracefully handle and log potential errors.
+# Differentiates between file not found, TOML parsing errors, and other unexpected exceptions. ⚠️
+
+# validate_toml: 🧐 A class method for additional validation of TOML data.
+# Checks for required fields, verifies data types, and confirms the existence of specified paths. 📋
+
+# logging.basicConfig: 🌟 Sets up global logging configuration.
+# Ensures consistent logging format and level across the entire application. 📈
+
+# Main execution block: 🚀 Tries to load and initialize the DynamicConfig.
+# On failure, logs an error and exits gracefully, preventing further execution with invalid configuration. ❌
