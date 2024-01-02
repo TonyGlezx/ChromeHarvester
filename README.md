@@ -74,7 +74,7 @@ For database adventures, format your dbconfig.json like so:
 ```
 
 For file output mode, simply specify the desired file path using the -o or --output command-line option.
-# Contributing 🤝****
+# **Contributing 🤝**
 
 Dive into open-source! Suggestions, improvements, and enhancements are warmly welcomed. Feel free to fork, modify, and send those pull requests, or drop an issue if you spot something amiss!
 
