@@ -1,4 +1,4 @@
-#**ChromeHarvester 🌐🔍**
+# **ChromeHarvester 🌐🔍**
 
 Welcome to ChromeHarvester - your sleek and powerful tool for mining the depths of open Chrome tabs! Dive into a sea of data, effortlessly extracting and shuttling tab URLs and source codes to your desired destination, be it a REST endpoint or a cozy SQL database.
 
