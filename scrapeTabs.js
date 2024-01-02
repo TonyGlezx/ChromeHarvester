@@ -1,9 +1,81 @@
+#!/usr/bin/env node
+
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 const CDP = require('chrome-remote-interface');
 const axios = require('axios');
 const mysql = require('mysql2/promise');
 const fs = require('fs');
+require('dotenv').config();
+
+const { OpenAI } = require('openai');
+
+const cheerio = require('cheerio');
+
+
+
+async function copyToClipboard(data) {
+    try {
+      const clipboardy = await import('clipboardy');
+      clipboardy.default.writeSync(data);
+      console.log('✔️ ChatGPT response copied to clipboard.');
+    } catch (error) {
+      console.error('❌ Error copying to clipboard:', error.message);
+    }
+  }
+  
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+
+function cleanHTML(htmlContent) {
+    const $ = cheerio.load(htmlContent);
+    // Remove script tags
+    $('script').remove();
+    $('style').remove();
+    // Remove link tags
+    $('link').remove();
+    // Remove elements you consider irrelevant, e.g., headers, footers, etc.
+    $('header').remove();
+    $('footer').remove();
+    // ... any other cleaning steps
+  
+    // Return the cleaned HTML as text or as HTML, based on your requirement
+    return $('body').text(); // for text
+    // return $.html(); // for cleaned HTML
+  }
+
+async function sendDataToChatGPT(data, saveToFile = false) {
+    data = data.replace(/\\n/g, "\n"); // Transform '/n' to new lines    
+    try {
+      const response = await openai.chat.completions.create({
+        model: "gpt-4-0314",
+        messages: [{role: 'user', content: data}],
+        max_tokens: 4096
+      });
+      const chatResponse = response['choices'][0]['message']['content'];
+
+      console.log(`✔️ Response from ChatGPT: ${chatResponse}`);
+
+      if (saveToFile) {
+        fs.writeFileSync(saveToFile, chatResponse, 'utf8'); // Save response to file
+      }
+
+      if (argv['copy-to-clipboard']) {
+        await copyToClipboard(chatResponse);
+        console.log('✔️ ChatGPT response copied to clipboard.');
+    }
+    
+
+      return chatResponse;
+    } catch (error) {
+      console.error(`❌ Error sending data to ChatGPT: ${error.message}`);
+    }
+}
+
+  
 
 async function saveToFile(url, source, filePath) {
     try {
@@ -24,7 +96,8 @@ async function getSourceFromTab(tab) {
         const { Runtime } = client;
         await Runtime.enable();
         const result = await Runtime.evaluate({ expression: 'document.documentElement.outerHTML' });
-        return result.result.value;
+        const cleanedSource = cleanHTML(result.result.value);
+        return "\n\nThis is a chrome tab:\n\n"+cleanedSource+"\n\n";
     } catch (error) {
         console.error(`Error getting source from tab: ${error.message}`);
     } finally {
@@ -105,11 +178,11 @@ async function saveToDatabase(url, source, dbConfig) {
 }
 
 
-async function processTabs(endpoint, dbConfig, filePath) {
+async function processTabs(endpoint, dbConfig, filePath, chatGPTPrompt) {
 
 
-    if (!endpoint && !dbConfig && !filePath) {
-        console.error('❌ Error: An endpoint, database configuration, or file path must be provided.');
+    if (!endpoint && !dbConfig && !filePath && !chatGPTPrompt) {
+        console.error('❌ Error: An endpoint, database configuration, file path, or ChatGPT prompt must be provided.');
         process.exit(1);
     } else if([endpoint, dbConfig, filePath].filter(e => e).length > 1){
         console.error('❌ Error: Please provide only one output method at a time.');
@@ -134,6 +207,7 @@ async function processTabs(endpoint, dbConfig, filePath) {
     try {
         console.log(`🔍 Fetching tabs...`);
         const tabs = await CDP.List();
+        let combinedData = chatGPTPrompt ? `${chatGPTPrompt}\n\n` : '';
 
         for (const tab of tabs) {
             if (tab.type === 'page') {
@@ -145,9 +219,14 @@ async function processTabs(endpoint, dbConfig, filePath) {
                         await saveToDatabase(tab.url, source, dbConfig);
                     } else if (filePath) {
                         await saveToFile(tab.url, source, filePath);
+                    } else if (chatGPTPrompt) {
+                        combinedData += `URL: ${tab.url}\nSource:\n${source}\n\n`;
                     }
                 }
             }
+        }
+        if (combinedData) {
+            await sendDataToChatGPT(combinedData);
         }
         console.log(`✅ All tabs processed.`);
     } catch (error) {
@@ -161,7 +240,7 @@ async function processTabs(endpoint, dbConfig, filePath) {
 }
 
 const argv = yargs(hideBin(process.argv))
-    .usage('Usage: $0 -e [endpoint] or $0 --dbconfig [path to db config file]')
+    .usage('Usage: $0 -e [endpoint] or $0 --dbconfig [path to db config file] or $0 -o [The file path to save the output] or -c [Custom prompt to ChatGPT + source]')
     .option('endpoint', {
         alias: 'e',
         describe: 'The endpoint to which data should be posted',
@@ -179,12 +258,36 @@ const argv = yargs(hideBin(process.argv))
         alias: 'o',
         describe: 'The file path to save the output',
         type: 'string'
+    }).option('chatgpt', {
+        alias: 'c',
+        describe: 'Custom prompt to prepend to the data before sending to ChatGPT',
+        type: 'string'
+      }).option('prompt-file', {
+        alias: 'p',
+        describe: 'Path to a file containing a custom prompt',
+        type: 'string'
+    }).option('copy-to-clipboard', {
+        alias: 'cc',
+        describe: 'Copy ChatGPT response to clipboard',
+        type: 'boolean'
     })
     .help()
     .strict()
     .argv;
 
-processTabs(argv.endpoint, argv.dbconfig, argv.output);
+let customPrompt = argv.chatgpt;
+if (argv['prompt-file']) {
+    if (fs.existsSync(argv['prompt-file'])) {
+        customPrompt = fs.readFileSync(argv['prompt-file'], 'utf8');
+    } else {
+        console.error(`❌ File not found: ${argv['prompt-file']}`);
+        process.exit(1);
+    }
+}
+    
+
+processTabs(argv.endpoint, argv.dbconfig, argv.output, customPrompt);
+
 
 
 
