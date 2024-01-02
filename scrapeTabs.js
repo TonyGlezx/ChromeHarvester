@@ -1,11 +1,21 @@
-#!/usr/bin/env node
-
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 const CDP = require('chrome-remote-interface');
 const axios = require('axios');
 const mysql = require('mysql2/promise');
 const fs = require('fs');
+
+async function saveToFile(url, source, filePath) {
+    try {
+        const timestamp = new Date().toISOString();
+        const dataToWrite = `Timestamp: ${timestamp}\nURL: ${url}\nSource:\n${source}\n\n`;
+        await fs.promises.appendFile(filePath, dataToWrite, 'utf8');
+        console.log(`✔️ Appended data for ${url} to file`);
+    } catch (error) {
+        console.error(`❌ Error saving data for ${url} to file: ${error.message}`);
+    }
+}
+
 
 async function getSourceFromTab(tab) {
     let client;
@@ -51,7 +61,7 @@ async function saveToDatabase(url, source, dbConfig) {
                         '   - Please verify your credentials.\n' +
                         '   - Technical Details: Error Code - ' + error.code + ', Message - ' + error.message
                     );
-                    
+
                     break;
                 case 'ENOTFOUND':
                     console.error(
@@ -61,7 +71,7 @@ async function saveToDatabase(url, source, dbConfig) {
                         '   - Ensure the server address is correct and reachable.\n' +
                         '   - Technical Details: Error Code - ' + error.code + ', Message - ' + error.message
                     );
-                    
+
                     break;
                 case 'ER_BAD_DB_ERROR':
                     console.error(
@@ -69,7 +79,7 @@ async function saveToDatabase(url, source, dbConfig) {
                         '   - The specified database does not exist.\n' +
                         '   - Check your database name for typos or incorrect casing.\n' +
                         '   - Technical Details: Error Code - ' + error.code + ', Message - ' + error.message
-                    );                    
+                    );
                     break;
                 // Add more cases as needed for specific MySQL errors
                 case 'ECONNREFUSED':
@@ -79,7 +89,7 @@ async function saveToDatabase(url, source, dbConfig) {
                         '   - Ensure the server is running and network settings are correct.\n' +
                         '   - Technical Details: Error Code - ' + error.code + ', Message - ' + error.message
                     );
-                    
+
                     break;
                 default:
                     console.error(`❌ MySQL Error (${error.code}): ${error.message}`);
@@ -95,14 +105,14 @@ async function saveToDatabase(url, source, dbConfig) {
 }
 
 
-async function processTabs(endpoint, dbConfig) {
-    
+async function processTabs(endpoint, dbConfig, filePath) {
 
-    if (!endpoint && !dbConfig) {
-        console.error('❌ Error: Either an endpoint or database configuration must be provided.');
+
+    if (!endpoint && !dbConfig && !filePath) {
+        console.error('❌ Error: An endpoint, database configuration, or file path must be provided.');
         process.exit(1);
-    } else if(endpoint && dbConfig){
-        console.log('❌ Error: Please provide either an endpoint (-e) or a database configuration (--dbconfig), not both.');
+    } else if([endpoint, dbConfig, filePath].filter(e => e).length > 1){
+        console.error('❌ Error: Please provide only one output method at a time.');
         process.exit(1);
     }
 
@@ -133,6 +143,8 @@ async function processTabs(endpoint, dbConfig) {
                         await postTabData(tab.url, source, endpoint);
                     } else if (dbConfig) {
                         await saveToDatabase(tab.url, source, dbConfig);
+                    } else if (filePath) {
+                        await saveToFile(tab.url, source, filePath);
                     }
                 }
             }
@@ -163,9 +175,26 @@ const argv = yargs(hideBin(process.argv))
                 return JSON.parse(fs.readFileSync(path, 'utf8'));
             }
         }
+    }).option('output', {
+        alias: 'o',
+        describe: 'The file path to save the output',
+        type: 'string'
     })
     .help()
     .strict()
     .argv;
 
-processTabs(argv.endpoint, argv.dbconfig);
+processTabs(argv.endpoint, argv.dbconfig, argv.output);
+
+
+
+
+
+
+
+
+
+
+
+
+
