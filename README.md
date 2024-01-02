@@ -10,7 +10,7 @@ Welcome to ChromeHarvester - your sleek and powerful tool for mining the depths 
 📂 File Storage: Save tab data to a specified file on your local system for easy access and record-keeping.
 ⚙️ **Customizable:** Flexible configurations to fit your workflow.  
 
-# **Getting Started ** 🏁
+# **Getting Started** 🏁
 
 ## **Prerequisites**
 Node.js
