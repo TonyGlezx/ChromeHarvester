@@ -17,3 +17,5 @@ __pycache__/
 prompt.txt
 
 .env
+
+test.mjs

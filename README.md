@@ -1,4 +1,4 @@
-#**ChromeHarvester 🌐🔍**
+# **ChromeHarvester 🌐🔍**
 
 Welcome to ChromeHarvester - your sleek and powerful tool for mining the depths of open Chrome tabs! Dive into a sea of data, effortlessly extracting and shuttling tab URLs and source codes to your desired destination, be it a REST endpoint or a cozy SQL database.
 
@@ -10,7 +10,7 @@ Welcome to ChromeHarvester - your sleek and powerful tool for mining the depths 
 📂 File Storage: Save tab data to a specified file on your local system for easy access and record-keeping.
 ⚙️ **Customizable:** Flexible configurations to fit your workflow.  
 
-# **Getting Started **🏁
+# **Getting Started** 🏁
 
 ## **Prerequisites**
 Node.js
@@ -74,7 +74,7 @@ For database adventures, format your dbconfig.json like so:
 ```
 
 For file output mode, simply specify the desired file path using the -o or --output command-line option.
-# Contributing 🤝****
+# **Contributing 🤝**
 
 Dive into open-source! Suggestions, improvements, and enhancements are warmly welcomed. Feel free to fork, modify, and send those pull requests, or drop an issue if you spot something amiss!
 

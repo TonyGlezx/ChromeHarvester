@@ -1,0 +1,5 @@
+Use export in a single line at the end of utils files
+validation in a single file with tet from a schema.
+analyze if return inside javascript file, so if no save detected, it informs it
+
+from clipboard to ...
