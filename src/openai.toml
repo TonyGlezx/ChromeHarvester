@@ -1,5 +1,7 @@
-api_key = "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"
+api_key = "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"
 model="gpt-3.5-turbo-1106"
+output_path="./output.txt"
+max_tokens=1000
 prompt="""
 Can you explain what is this?
 """

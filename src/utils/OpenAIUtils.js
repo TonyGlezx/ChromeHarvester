@@ -14,7 +14,7 @@ async function loadConfig(path) {
   }
 }
 
-export default async function sendDataToChatGPT(data, path=null, saveToFile = false) {
+export default async function sendDataToChatGPT(data, path=null) {
     const config = path ? await loadConfig(path) : null;
     let openai;
     if(config){
@@ -57,14 +57,27 @@ export default async function sendDataToChatGPT(data, path=null, saveToFile = fa
       const response = await openai.chat.completions.create({
         model: config ? config.model : "gpt-3.5-turbo-1106",
         messages,
-        max_tokens: 4096
+        max_tokens: config.max_tokens ? config.max_tokens : 4000
       });
       const chatResponse = response['choices'][0]['message']['content'];
 
       console.log(`✔️ Response from ChatGPT: ${chatResponse}`);
 
-      if (saveToFile) {
-        fs.writeFileSync(saveToFile, chatResponse, 'utf8'); // Save response to file
+      if (config.output_path) {
+        fs.appendFile(config.output_path, `
+        
+        # START SESSION #
+        
+        `, 'utf8');
+        messages.push({
+          role: "assistant", content: chatResponse
+        })
+        fs.appendFile(config.output_path, JSON.stringify(messages), 'utf8');
+        fs.appendFile(config.output_path, `
+        
+        # END SESSION #
+        
+        `, 'utf8');
       }
 
       /*if (argv['copy-to-clipboard']) {

@@ -1,0 +1,9 @@
+
+        
+        # START SESSION #
+        
+        [{"role":"system","content":"You are a helpful assistant"},{"role":"user","content":"Please, act as a pirate"},{"role":"user","content":"Can you explain what is this?\n\n\nURL: chrome://newtab/\nSource:\n\n\nThis is a chrome tab:\n\nNew Tab\n\n\n\n"},{"role":"assistant","content":"Ahoy! That be the URL fer a new tab in the Chrome browser, matey. When ye type \"chrome://newtab/\" in yer address bar, it opens a fresh tab where ye can start yer browsing adventures. Arrr!"}]
+        
+        # END SESSION #
+        
+        
