@@ -13,19 +13,19 @@
 from flask import Flask, request, jsonify
 import trafilatura
 from lxml import etree, html  # Ensure lxml is installed
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, T5Tokenizer
-import torch
+#from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, T5Tokenizer
+#import torch
 
 import toml
 import re
 
 from pathlib import Path
-import gpt4all.gpt4all
+#import gpt4all.gpt4all
 
-gpt4all.gpt4all.DEFAULT_MODEL_DIRECTORY = Path.home() / '.config' / 'ch'
+#gpt4all.gpt4all.DEFAULT_MODEL_DIRECTORY = Path.home() / '.config' / 'ch'
 
 
-from gpt4all import GPT4All
+#from gpt4all import GPT4All
 
 
 
@@ -34,9 +34,9 @@ from gpt4all import GPT4All
 app = Flask(__name__)
 
 # Load FLAN-T5 model
-tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
+#tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
 #model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large")
-model = GPT4All("mistral-7b-instruct-v0.1.Q4_0.gguf")
+#model = GPT4All("mistral-7b-instruct-v0.1.Q4_0.gguf")
 
 @app.route('/extract', methods=['POST'])
 def extract():
@@ -167,7 +167,7 @@ def match_fields_endpoint():
         return jsonify({"message": result}), 400
     else:
         return jsonify({"matched_fields": result}), 200
-
+'''
 @app.route('/flan-t5', methods=['POST'])
 def query_flan_t5():
     # Extract text from the request
@@ -255,7 +255,7 @@ def untokenize_endpoint():
     _ = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(tokens))
     return jsonify({'text': _})
 
-
+'''
 
 
 if __name__ == '__main__':

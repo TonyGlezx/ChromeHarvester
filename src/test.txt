@@ -1,199 +1,33 @@
-Timestamp: 2024-01-07T05:14:30.074Z
-URL: https://www.reddit.com/
+Timestamp: 2024-01-22T23:18:16.280Z
+URL: chrome://newtab/
 Source:
 
 
 This is a chrome tab:
 
-Mi hermano está en la cárcel desde hace 5 años por trata de menores. Por ésta y por muchas otras razones que no tienen nada que ver con nosotros, mis hermanas y yo no queremos que salga nunca de ahí, si es posible, y que nunca regrese a vivir a la casa de nuestros padres (tengo 19 años).
-Mi papá y mi mamá ya nos han dicho en varias ocasiones que, si llega a salir, ellos lo van a recibir en la casa, pero él siempre había estado en malos pasos antes de ser procesado y siempre llevaba problemas a la casa, de los que mis papás siempre lo sacaban, y sinceramente no queremos que siga pasando lo mismo.
-¿Hay algún modo de hacer que mi hermano cumpla más años de sentencia, que no salga de la cárcel o que no pueda regresar a vivir con nosotros, sin que nuestros padres se enteren? Sabemos solamente de las órdenes de restricción, pero seguramente nuestros padres se van a enterar si tramitamos una y capaz y nos corren a nosotros de la casa, se enojan bastante o hacen lo posible por revocarla.
-Sé que suena demasiado cruel que no queramos a nuestro hermano de vuelta, pero han sido demasiados los problemas que ha traído a la casa, incluso antes de este, y solamente queremos una vida tranquila para todos. Todos en la casa estamos mejor sin él, aunque nuestros padres no lo quieran admitir, pero sabemos que si hacemos algo, se van a enterar y no lo van a permitir.
-Suggested
-Empeze a trabajar en demasiados lados por aburrimiento y actualmente estoy muy cansado pero consigo un salario bueno, el problema es que por mi salud terminare de trabajar, lo que me interesa saber es como puedo hacer más dinero con mi dinero? PD este mes liquide todas mis deudas entonces estoy en 0 y por eso me dio miedo que me pase en un futuro.
-Popular in your country
-Popular in your country
-Qué tal amigos, viejo a cuba por 5 días en febrero, algunos consejos que puedan brindarme de favor para hacer más ameno el viaje y demás, tengo planeado estar dos días en la habana en un Airbnb y 2 en varadero en un resort y regresar a la habana, llevaré dólares y lo que más me preocupa es el tema del transporte ya que he visto que es caro moverse en taxi. Mil gracias y feliz año nuevo!
-Honestamente soy consumidor(Marihuana), tengo entendido que encerrarme va contra mis derechos humanos y en este caso difamación por parte de mi hermano Mi padre sabe de antemano mi situacion sabe que no hago nada de lo que dice mi hermano (Robar y tráficar) Ps Tengo 22 años Tengo trabajo, sobre todo no es un consumo desmedido
-¡Hola a todos! Soy de Belarús y quiero ingresar en FCPyS de UNAM (másters, relaciones internacionales). ¿Que documentos necesito y si tengo que pasar unos exámenes para entrar? ¿Y dónde es más fácil trabajar para los estudiantes internacionales? Y si vale la pena ingresar allí
-Tengo un diploma de licenciatura en relaciones internacionales de universidad local y ~B2 en español.
-Unas preguntas que tengo:
-Que documentos necesito para recibir un visado estadiantil, (puedo hacerlo en embajada en Moscú, Rusia o en Estados Unidos donde temporalmente vive un de mi familiares), y también querría saber en que consiste el proceso de ingresar en general, cuando presentar los diplomas para el año académico próximo (2024-2025), etc. Y si tengo que pasar unos exámenes o asistir a una entrevista o algo así.
-Otra pregunta es si hay unos cursos de español en UNAM para estudiantes extranjeros.
-Si ayudan UNAM con el trabajo temporal para cubrir los gastos? Si ofrece la uni unos trabajos en el campus o algo así. Porque como extranjero sería difícil buscar y hacer aún trabajos simples como camarero o cajero (o mensajero en bicicleta que yo ya ha hecho en my país), por que no tengo 'exposure' de ambiente de lenguaje y no querría enfrentar unos compañeros/clientes enojados conmigo si no hago algo bien, quiero una atmósfera amistosa donde me ayudan si algo pasa mal. Uno de trabajos que puedo hacer es hacer traducciones entre español inglés y ruso.
-Si hay unos dormitorios para 1 persona en la residencia estudiantil y si existen cuanto costarían? Porque yo necesito privacidad, no me gusta vivir con otras personas. Y si no las hay, cuanto en media cuestan unos apartamentos más pequeños y baratos en las afueras más o menos seguras de la ciudad (por ejemplo en el sur cerca de UNAM o en el norte por ejemplo, me gusta viajar en metro por eso si está lejos de la uni no pasa nada para mí)
-Cuanto es la costa de vivir un mes en CDMX para una persona? Si alquilo una habitación o apartamento barato, como unos tacos 3 veces al día, viajo 2 veces al mes a otras ciudades.
-Si el proceso de educación es interesante y orientado a la carrera porque en mi país nadie de los profesores nos dieron ejemplos donde podríamos trabajar después de graduarnos y por esta razón muchos de nosotros no sabemos que hacer en futuro en nuestra país. Si no es la mejor opción que otros universidades de LatAm recomendarían para estudios de relaciones internacionales?
-Because you visited this community before
-Vanguard is a kernel mode process unlike many user mode anti-cheats other games use. Its a very good solution to counter cheaters, agreed. People saying it's a root kit doesn't make any sense coz a big company like riot will never even think of tampering with user's personal data using vanguard. That will lead to major consequences which they are better aware of than me. So privacy is not an issue, at least for me.
-The problem: I understand that riot will never support linux, coz its just another way for cheaters to cheat. How? you ask, well linux kernel as you know is open source and it is not that difficult for a skilled programmer to build it himself and change the code so that vanguard cannot detect the cheats. What if a programmer like me NEEDS to be on linux for his work?
-The solutions and why do won't they work:
-Using a VM for linux: Sure, you'll use a VM, now good luck passing the physical GPU to the VM. What? VFIO? Well, that needs windows hypervisor to be enabled and valorant stops working as soon as you enable hypervisor. LMAO
-Dual booting: It needs secure boot to be disable, as you might have guessed, valorant does not run if secure boot is disabled.
-Some beta releases of Ubuntu supports secure boot. So a mint image with latest kernel will work with secure boot IF, the secure boot mode is set to other OS. As you might have guessed, this will break valorant too.
-Riot, people even criticized you for running a ring 0 process in the first place just to run a freakin game. On top of that, why is it mandatory to enable secure boot. Windows kernel is proprietary and there mostly aren't any modifications done to it, which should require secure boot. Okay forget the secure boot thing, what is the thing that the secure boot mode should only be set to "Windows UEFI mode", that's just absurd control over someone's system.
-And please don't tell me to stop playing valorant, this should not be the topic of discussion really. Its the only game me and my guys play in free time.
-Popular in your country
-No tengo nada en contra de los drones solo de su mal manejo, hace pocos días un drones está explorando mi propiedad, se que la está explorando ya que si pasara sobrevolando no tendría problema, pero baja como buscando algo, tengo 2 mujeres menores de edad y temo por su seguridad
-Because you visited this community before
-My (old) uncle was looking for a gig on facebook and messaged this account for details. Cut to, this account said he has money and wants to reinvest it. It ended up with him sending us 400k thru crypto because he can’t do it with his bank since his bank is having problems and he has to do it urgently. He promised we have 50k out of it and asked us to keep the money until its time to withdraw. After a couple of days, his account is nowhere seen and we can’t contact his facebook.
-Initially I never thought someone would entrust their money like that to us, strangers. Let alone give and promise 50k. So I thought this was ill money or something.
-Since he promised, is it okay for us to take the 50k already? It’s a money that can extremely help our family. Else if he’s really not coming back, can we keep all the money?
-Thank you.
-|Game
-|Group
-|Stores
-|Review
-|Closing Shift
-|TENOKE
-|-
-|Dont Text and Drive
-|TENOKE
-|-
-|Hitler My Friend
-|TENOKE
-|-
-|I WANT TO DIE
-|TENOKE
-|Steam
-|55.69% (3)
-|MOCHI A GIRL
-|TENOKE
-|-
-|Update
-|Group
-|Stores
-|Reviews
-|Anvil.Saga.Update.v1.0.5
-|TENOKE
-|-
-|Death.Roads.Tournament.Update.v1.0.5.121
-|TENOKE
-|-
-|Kingpin.Reloaded.Update.v1.04
-|TENOKE
-|-
-|Roboquest.Update.v1.0.1
-|TENOKE
-|-
-Technically no releases were made today, but these releases were missed yesterday, so I'll count them as today's releases
-Q&A
-Q: When will [insert game name here] be cracked?
-A: STOP! r/CrackWatch members are not psychic. Games get cracked by completely ANONYMOUS SCENE GROUPS who don't disclose their progress or plans to the general public so NO ONE knows WHEN and IF a certain game will be cracked.
-Q: What are all these NFO thingies? Where do I download?
-A: NFOs are text files included with game releases which contain information about the releases. r/CrackWatch only informs which games have been cracked. To download look for the releases on CS.RIN.RU's forum or torrent websites. Useful websites can be found in The Beginners Guide or r/PiratedGames's Mega Thread.
-Q: WTF is Denuvo?
-A: Denuvo is a Digital Rights Management (DRM) technology used to protect games from being cracked. Games that have Denuvo are harder to crack and usually take much longer. See Pinned Post for a list of Denuvo games.
-Q: An update is out, but it includes the base game as well! Can I only download the update without redownloading the entire game?
-A: Yes. CS.RIN.RU is your friend.
-Actualmente tengo un contrato de arrendamiento con póliza jurídica que vence el 26 de enero. El mes pasado conversamos acerca de la renovación del contrato y él me comentó que habría un incremento del 10%, negociamos un poco y quedó en 7%. El contrato decía que solo me podría subir lo que el Índice de Precios al Consumidor (inflación) dictara. Si bien cerramos las condiciones por llamada telefónica, me salió una oportunidad de rentar un departamento en mi mismo edificio que tiene muchas mejores condiciones y por prácticamente el mismo precio, decidí iniciar proceso para rentar y ya fui aprobado.
-Dicho todo el contexto, hoy conversé con mi arrendador y explotó en furia al enterarse, incluso le gritó a mi mamá. Justo decidimos movernos por este tipo de situaciones, nuestro arrendador es alguien muy explosivo. Ahora tenemos miedo de lo complejo que puede ser la entrega del departamento, la parte de recuperar nuestro depósito, hay una cláusula en en el contrato que él puede desalojarnos de forma express y nos da miedo que quiera ejecutarla debido a su enojo. ¿Hay algún artículo en la constitución que nos defienda? ¿Algún tip para lidiar con este tipo de situaciones? ¿Legalmente cómo podríamos recuperar el depósito?
-Popular in your country
-Suggested
-Me encuentro estudiando química en una FES sin embargo han habido muchas razones que de apoco me han mantenido atrasado y desarrollando mis habilidades sociales más que científicas y la forma en la que veo las cosas me hace interesarme por Filosofía o ejercer la docencia. El punto no es tanto eso. ¿cuál fué su experiencia de quienes hayan hecho un cambio similar? y ¿qué requerimientos piden para el trámite?
-Because you've shown interest in this community
-Hi. I have been using windows for years. I want to fully switch to Linux from windows. I have experience with Linux, as I have a couple of servers which run Linux, as a base OS. I have tried EndeavourOS, however my PC did not like that.
-I have a NVIDIA RTX 3060. I tried running a simple game like Minecraft on it, however it lags. It also lags whilst doing normal tasks. I did install the drivers, i think correctly.
-Any suggestions on what OS to use?
-🚘 Undeads Rush Survival Game is FINALLY RELEASED! 🏆 Race & earn crypto rewards, trophies and prizes 🪂 $3,000,000 Airdrop for players and community members
-Secured partnerships with Warner Bros. & many others since 2022.
-Texto largo
-Antes que nada no estoy en contra de estas leyes, pero lamentablemente se hace mal uso de estas para favorecer a mujeres que no deberian.
-Asi esta el tema:
-Un primo viva con su ex-pareja, ya tenian muchos años separados pero vivian en la misma casa, en cuartos separados, por los niños. La casa esta a nombre de el y tienen varios negocios, 1 que administra su expareja y otros 2 que los administran en conjunto.
-Todo cambio el dia en que mi primo fue a dejar a un evento a sus hijas y para no regresar a su casa por que esta muy lejos e iba a regresar por ellas, ya que viven fuera de la ciudad, se fue con otra prima a cenar, durante la cena empezo empezo a recibir una llamada tras otra de su expareja, las cuales no las contestaba pero fue tanta la insiatencia que contesto, la llamada era para reclamarle que donde estaba, que estaba haciendo ahi, que lo veia en el gps, que ahi ya no vivia nadie de sus familiares, que estaba con tal vieja y la madre, a lo que mi primo se juatifico y le colgo.
-En la madruga al entrar a su casa lo resibe su expareja a gritos, reclamandole como una loca, mi primo la esquiva y se encierra en su cuarto a dormir, a lo que ella empieza a golpear la puerta intensamemte igual con gritos, maldiciones y demas, mi primo despues de un rato se harta abre la puerta y ella se le viene a los golpes, el solo se limita a cubrir hasta que tuvo que darle 2 cachetadas para quitarsela de encima por que no paraba, este fue el "error" que le costaria todo, defenderse.
-Despues de unas horas el se despierta por el ruido en la casa, la casa esta llena de policias y ministeriales, se lo llevan esposado, en pijama, ya que mientras el dormia su pareja fue a levantar una denuncia por violencia a la mujer y demas cosas, sale bajo fianza, tiene ordenes de restriccion, le cambiaron las chapas a su casa y ahora esta en la calle sin nada, por que no puede ni entrar a su propia casa, los negocios se los quedo ella, su herramienta de trabajo para por lo menos volver a empezar, 1 carro, etc, vive en la calle en un carro logro tener las llaves.
-Adicional ella esta demandandolo para quedarce con la casa o que le den el valor de esta mas una pension vitalicia para mantenerce ya que alega que no pudo trabajar por cuidar a sus hijos de chicos y no sabe hacer nada.
-Mis preguntas son:
-Se puede hacer algo? Los hombres estamos completamente perdidos ante estas leyes para los que realmente no hicieron nada malo o con saña o al ser en defensa propia? Se podria contrademandar por difamacion, daños, y demas?
-Ayuda! No me quieren pagar ni hacer un trabajo de herrería.
-Buenas noches
-Hace un mescontacte a un herrero para realizar un trabajo en mi casa por el cual me iba a cobrar $10,000, y para iniciar a comprar el material me pidió $5,000. Después de eso me respondía los mensajes por Whatsapp con normalidad hasta que antes de navidad ya no me contestaba las llamadas ni msj. En ese momento no sabía dónde vivía ya que fue recomendado por una persona que si le realizó el trabajo. Busque por todos los medios en facebook con su número y nombre y di con que era buscado por más familias por qué recibe dinero y no realiza trabajos.
-Estoy pensando en estos días en ir a buscarlo ya que tengo su dirección y pedirle me regresé el dinero pero no sé cuál sería la mejor elección o que hacer? Si denunciar si no me lo regresa o no realiza el trabajo
-Hola soy extranjero y tenía planes de seguir maestría en CU este semestre (Ya estoy aceptado) pero me falta un documento "importante" de licenciatura para la entrega documental.
-En su experiencia creen que DGAE o quién sea que se encargue de las admisiones sean muy estrictos en ese sentido y me va a denegar la inscripción, o probablemente pueda entregar ese documento más adelante?
-Mi pregunta es porque no quiero viajar si es muy probable que me van a denegar la inscripción.
-Because you visited this community before
-Hello,
-It's first time I'm using Upwork to hire a freelancer.
-I was suggested with a business partner who has experience with Upwork, to do video chats with the applicants because the top rated accounts can be sold and get used by new freelancers who isn't as capable or honest as the original one. I suppose they wouldn't risk changing their profile picture.
-Today I asked a freelancer for a 10 minute video chat. He said he can only do a voice chat as their webcam is broken. When I asked if he could alternatively use his smartphone, after a long pause in messaging, he sent a message like;
-"Trust me a voice chat would be as effective"
-Which got me concerned. I replied with saying "Alright I will try to have video chat with other applicants first and then get back to you". That didn't persuade him to change his decision.
-Do you think its a reasonable concern? Or am I being too paranoid?
-He is located in India.
-Pokemon Scarlet & Violet Duology [Ryujinx Nintendo Switch Emulated Release] (v3.0.0 + 3 DLCs, MULTi9) [5.9GB] / Donkey Kong Country: Tropical Freeze [Yuzu/Ryujinx Nintendo Switch Emulated Release] (v1.0.2, MULTi6) [From 4.2GB] | KaOs Krew Repacks
-Un amigo “heredó” una casa y tiene los documentos como escrituras notariales, planos y demás pero a nombre de su papá (difunto)mi amigo paga predial y lleva viviendo en el domicilio como 20 años, el testamento del padre dice que sus bienes se los repartan sus tres hijos, uno posee una casa y accede a cederle los derechos a mi amigo, pero el otro se rehúsa a no ser que le de un dinero o una casa. ¿Cómo puede poner las escrituras a su nombre? ¿Que se podría hacer? ¿Podría perder su casa? Espero esté claro lo que planteó y si no, me gustaría que me comentaran. Gracias
-Because you visited this community before
-I'm thinking of finally switching from Manjaro to Pure Arch but I have a couple of questions for the community.
-I refuse to apologize for my questions because I cannot learn if I don't ask. If my questions are so simple, just give me a link to read and I'll happily do it.
-First off, I loved my experience with manjaro and some of the tiny qol improvements the manjaro team has provided. Yes I've had my fair share of headaches with updates sometimes bricking my system because I forgot to read the release notes.
-Here's what I'm asking, I want to hear everyone's opinion on how I should install arch and any ideas an how to maximize system efficiency for a fluid gaming experience. I've had this weird issue with manjaro and it slowly builds up background processes for unnecessary things clogging up the ram but ultimately starts taking 4 gigs of ram for no reason at all. So in other words, how would I effectively make my system run minimalisticly (in the background) while gaming but not look bare bones in desktop mode (i use kde plasma).
-Second, (bare with me, I know) main stream kernel or zen? I know there's a huge debate about this but I want to read your real experiences, not something you heard or read.
-Third, (this one is very uncharted for me so I really don't know how to ask this other than) systemd? Or an alternative init? I don't know if you can simply switch one for another when building up Arch but if anyone has experience with this, pros and cons, I'd greatly appreciate hearing what you have to offer.
-fourth, X11 or Wayland. I'm a photographer as well and I remembered reading about complex color editing issues with Wayland.
-Lastly, any meaningful or qol improvements/enhancements anyone should have in a fresh arch install.
-Honestly, anything helps but again, even if my questions are dumb or to simple for you I'm still not apologizing. You can't learn if you don't ask questions, sometimes even the dumb ones.
-Thanks!!!
-Because you've shown interest in this community
-I've tried Zorin OS Lite, it doesn't boot at all, and I've tried Xubuntu 22.04, it boots off USB, but the keyboard doesn't work, the trackpad don't work, WIFI doesn't work, webcam doesn't work.
-Is there a Linux distro where everything works?
-Estuve rentando en un poblado de Puebla un cuarto de estudiantes y me solicitaron 1850 pesos de depósito inicial + renta para las cuestiones del cuarto. Dure ahí 11 meses y al irme deje todo bien, sin pendientes, cosas rotas etc... Pero la casera no me quiere devolver mi depósito, le he mandado mensaje los últimos 4 meses solicitándolo. ¿Ya se perdió o se puede hacer algo?
-🚘 Undeads Rush Survival Game is FINALLY RELEASED! 🏆 Race & earn crypto rewards, trophies and prizes 🪂 $3,000,000 Airdrop for players and community members
-Secured partnerships with Warner Bros. & many others since 2022.
-Because you visited this community before
-Yesterday I upgraded my PC hardware and decided to do a refresh of my OSes. I have 2 SSDs, one for Linux and one for Windows.
-Installed Debian with KDE on the first disk in about 10 minutes. Do some testing and everything is running smoothly. Easy.
-Time for Windows, so I download the official Win11 ISO from the website and flash it to a USB. Try to boot from it but get an error that drivers are missing. Look it up and figure out you can only create a Windows USB from Windows. Okay.. so I boot into my old Windows install and download the USB creation tool. Takes 30 minutes to flash it which is dumb because the ISO is only 6GB but whatever. Boot it up, get to the installation page and it formats the disk, starts installing, and then sits at 0% for a bit before returning an error something like "installation media won't boot" with no error code or helpful information. I'm worried I flashed the USB wrong and now have no Windows machine to create a new one with. So I call up a friend and ask him to bring over his Windows latop. We download the USB creation tool again on his laptop and try again. Same error. We both start pouring over useless answers.microsoft.com and hardware forum posts until finally I find a reddit thread suggesting that Windows cannot install if multiple SSDs are installed. Desperate, I opened up my case and unplugged one SSD, and it actually worked. I finally was able to boot into Windows and set up everything. That is until I restarted and unplugged the USB and Windows disappeared from the boot menu. Then I realized, although windows was installed to the disk the boot manager installed ON THE USB. WTF!!? At this point hours has gone by so I gave up.
-Windows is the most popular Desktop OS in the world. Made by a Trillion dollar company. And costs $139. And yet it's still unusable garbage.
-I'm so fed up, from here on if a game doesn't run on Linux then I'm not playing it. Rant over thanks for reading.
-Duda con amenaza de presunto capo En un negocio de ropa un cliente viene regularmente a comprar prendas y es un poco altanero, hoy llegó de más y se enojó porque no estaba la mercancia como la buscaba y aventó las prendas, le pedimos respetara el negocio y se enojó y lanzó amenazas a gritos quee para la próxima sería golpes o incluso balazos, alegaba que no sabía con quién me estaba metiendo, que aquí quienes mandan son ellos que ellos son la v3rg4 Esto en un municipio del estado de Querétaro, esta persona es de fuera y nunca se había portado de esta manera o decir tales amenazas, si era de trato pesado pero se le trataba bien. Está grabado por las cámaras de seguridad y también en audio Debería denunciar o dejarlo así ? La verdad que con estos tipos y la policía corrompida a nivel nacional ya no se sabe qué pensar.
-Similar to r/DerechoMexicano
-¿El salario mínimo establecido por la ley es lo que tiene que recibir el trabajador después de impuestos o es bruto, osea, al salario mínimo se le tiene que descontar impuestos, IMSS, etc?
-La división de la UNAM encargada de difundir el arte y la cultura en todos sus géneros que se desarrollan en la Universidad. Quisiera sabe sus opiniones ¿Es algo bueno o malo? ¿Crees que necesite varios cambios o es mejor dejarlo así?
-|Game
-|Group
-|Stores
-|Review
-|Hedon Bloodrite Incremedital
-|DINOByTES
-|-
-|Baldurs Gate 3 Language Pack
-|RUNE
-|-
-|Baldurs Gate 3
-|RUNE
-|Steam, GOG
-|96.76% (527.8k)
-|The Faraway Land
-|TENOKE
-|Steam
-|85.53% (65)
-|Meet Your Oshi
-|TENOKE
-|Steam
-|100.00% (21)
-|Stormworks Space
-|Unleashed
-|Steam
-|44.89% (316)
-Q&A
-Q: When will [insert game name here] be cracked?
-A: STOP! r/CrackWatch members are not psychic. Games get cracked by completely ANONYMOUS SCENE GROUPS who don't disclose their progress or plans to the general public so NO ONE knows WHEN and IF a certain game will be cracked.
-Q: What are all these NFO thingies? Where do I download?
-A: NFOs are text files included with game releases which contain information about the releases. r/CrackWatch only informs which games have been cracked. To download look for the releases on CS.RIN.RU's forum or torrent websites. Useful websites can be found in The Beginners Guide or r/PiratedGames's Mega Thread.
-Q: WTF is Denuvo?
-A: Denuvo is a Digital Rights Management (DRM) technology used to protect games from being cracked. Games that have Denuvo are harder to crack and usually take much longer. See Pinned Post for a list of Denuvo games.
-Q: An update is out, but it includes the base game as well! Can I only download the update without redownloading the entire game?
-A: Yes. CS.RIN.RU is your friend.
-Want to build rich web applications quickly and easily? With 80+ Syncfusion Blazor Components, you can do just that! Plus, our unique document processing libraries make it easy to manipulate Excel, Word, PDF, and PowerPoint files. Get started today with our free 30-day trial!
-Buen día, en mi trabajo me tienen dado de alta en el imss con el salario mínimo pero sí me pagan más, en el contrato que firmé acepto esas condiciones. Ahorita con el aumento de salario mínimo terminé percibiendo menos, ya que subió el seguro social pero me mantuvieron con el mismo salario. ¿Hay algo que pueda hacer? ¿Me puedo meter en problemas por aceptar que me dieran de alta con el minimo ya que estoy evadiendo impuestos por asi decirlo?
-Estoy buscando una habitación para rentar por primera vez y surgieron varias opciones. ¿Qué cosas son las que ponen mayor peso? ¿Cuando son de otro estado hacen el esfuerzo de ir a ver la vivienda donde rentaran? ¿Prefieren baño compartido a menor precio o sacrificar dinero por un baño individual? ¿Como le hacen para conocer las rutas de transporte?
-Popular in your country
-Me llegó la memoria de una película mexicana o de habla hispana donde un grupo de niños está asediando la localización donde se encuentra un anciano, todo en plan de juego al parecer. El anciano les ponía trampas y los niños atacaban con resorteras y pirotecnia. Solo recuerdo una escena final dónde los niños ganan y el señor todo derrotado y sucio comenta sobre la derrota y habla de mejorar su estrategia para el siguiente año
-Recent posts
-Most appropriate way to shutdown a system in a few hours?
+New Tab
+
+
+
+Timestamp: 2024-01-22T23:18:34.196Z
+URL: chrome://newtab/
+Source:
+
+
+This is a chrome tab:
+
+New Tab
+
+
+
+Timestamp: 2024-01-22T23:23:42.780Z
+URL: chrome://newtab/
+Source:
+
+
+This is a chrome tab:
+
+New Tab
 
 
 

@@ -1,0 +1,12 @@
+api_key = "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"
+model="gpt-3.5-turbo-1106"
+prompt="""
+Can you explain what is this?
+"""
+[[messages]]
+role = "system"
+content = "You are a helpful assistant"
+[[messages]]
+role = "user"
+content = "Please, act as a pirate"
+

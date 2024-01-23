@@ -11,7 +11,7 @@ dotenv.config();
 async function main() {       
 
     try {
-        await processTabs(argv.endpoint, argv.dbconfig, argv.output, argv.chatgpt, argv['js-file']);
+        await processTabs(argv.endpoint, argv.dbconfig, argv.output, argv.chatgpt, argv['js-file'], argv['prompt-file']);
         
     } catch (error) {
         console.error(`❌ An error occurred: ${error.message}`);

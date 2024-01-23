@@ -5,6 +5,7 @@ import axios from 'axios';
 import saveToDatabase from "./DatabaseUtils.js"
 import executeJavaScript from './JavaScriptExecutor.js'; // Import a hypothetical utility function
 import saveToFile from "./FileUtils.js"
+import sendDataToChatGPT from "./OpenAIUtils.js";
 
 
 // Todo
@@ -57,19 +58,22 @@ async function postTabData(url, source, endpoint) {
     }
 }
 
-export async function processTabs(endpoint, dbConfig, filePath, chatGPTPrompt,scriptContent) {
+export async function processTabs(endpoint, dbConfig, filePath, chatGPTPrompt,scriptContent, chatGPTpath) {
 
   
   
 
 
-    if (!endpoint && !dbConfig && !filePath && !chatGPTPrompt && !scriptContent) {
-        console.error('❌ Error: An endpoint, database configuration, file path, or ChatGPT prompt must be provided.');
+    if (!endpoint && !dbConfig && !filePath && !chatGPTPrompt && !scriptContent && !chatGPTpath) {
+        console.error('❌ Error: An endpoint, database configuration, file path, ChatGPT config file path or ChatGPT prompt must be provided.');
         process.exit(1);
     } else if([endpoint, dbConfig, filePath].filter(e => e).length > 1){
         console.error('❌ Error: Please provide only one output method at a time.');
         process.exit(1);
-    }
+    } else if([chatGPTPrompt, chatGPTpath].filter(e => e).length > 1){
+        console.error('❌ Error: Please provide only one ChatGPT prompt method at a time.');
+        process.exit(1);
+    } 
 
     if(endpoint) {
         try {
@@ -110,7 +114,8 @@ export async function processTabs(endpoint, dbConfig, filePath, chatGPTPrompt,sc
                         await saveToDatabase(tab.url, source, dbConfig);
                     } else if (filePath) {
                         await saveToFile(tab.url, source, filePath);
-                    } else if (chatGPTPrompt) {
+                    } 
+                    if (chatGPTPrompt || chatGPTpath) {
                         combinedData += `URL: ${tab.url}\nSource:\n${source}\n\n`;
                     }
                     if (scriptContent) {                       
@@ -119,8 +124,10 @@ export async function processTabs(endpoint, dbConfig, filePath, chatGPTPrompt,sc
                     }
             }
         }
-        if (combinedData) {
-            await sendDataToChatGPT(combinedData);
+        if (combinedData || chatGPTpath) {
+            
+            await sendDataToChatGPT(combinedData,chatGPTpath ? chatGPTpath : null);
+            
         }
         console.log(`✅ All tabs processed.`);
     } catch (error) {
