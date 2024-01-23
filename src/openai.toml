@@ -1,4 +1,4 @@
-api_key = "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"
+api_key = ""
 model="gpt-3.5-turbo-1106"
 output_path="./output.txt"
 max_tokens=1000

@@ -5,7 +5,7 @@ import axios from 'axios';
 import saveToDatabase from "./DatabaseUtils.js"
 import executeJavaScript from './JavaScriptExecutor.js'; // Import a hypothetical utility function
 import saveToFile from "./FileUtils.js"
-import sendDataToChatGPT from "./OpenAIUtils.js";
+import chatLoop from "./OpenAIUtils.js";
 
 
 // Todo
@@ -126,7 +126,7 @@ export async function processTabs(endpoint, dbConfig, filePath, chatGPTPrompt,sc
         }
         if (combinedData || chatGPTpath) {
             
-            await sendDataToChatGPT(combinedData,chatGPTpath ? chatGPTpath : null);
+            await chatLoop(combinedData,chatGPTpath ? chatGPTpath : null);
             
         }
         console.log(`✅ All tabs processed.`);
