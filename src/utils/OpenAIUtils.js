@@ -19,14 +19,23 @@ async function loadConfig(path) {
 async function sendDataToChatGPT(messages, data, config) {
   try {
       const openai = new OpenAI({ apiKey: config.api_key });
-      const response = await openai.chat.completions.create({
+      const chat_stream = await openai.beta.chat.completions.stream({
           model: config.model || "gpt-3.5-turbo-1106",
           messages,
-          max_tokens: config.max_tokens || 4000
+          max_tokens: config.max_tokens || 4000,
+          stream: true
       });
-      const chatResponse = response['choices'][0]['message']['content'];
-      console.log(`✔️ Response from ChatGPT: ${chatResponse}`);
-      return chatResponse;
+      process.stdout.write("Assistant: ");
+      chat_stream.on('content', (delta, snapshot) => {
+        process.stdout.write(delta);
+      });
+
+      const chatCompletion = await chat_stream.finalChatCompletion();
+
+      
+
+      
+      return chatCompletion.choices[0].message.content;
   } catch (error) {
       console.error(`❌ Error sending data to ChatGPT: ${error.message}`);
       return '';
