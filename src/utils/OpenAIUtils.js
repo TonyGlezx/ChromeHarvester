@@ -16,8 +16,9 @@ async function loadConfig(path) {
   }
 }
 
-async function sendDataToChatGPT(messages, data, config) {
+async function sendDataToChatGPT(messages, data, config) {  
   try {
+      
       const openai = new OpenAI({ apiKey: config.api_key });
       const chat_stream = await openai.beta.chat.completions.stream({
           model: config.model || "gpt-3.5-turbo-1106",
@@ -25,7 +26,8 @@ async function sendDataToChatGPT(messages, data, config) {
           max_tokens: config.max_tokens || 4000,
           stream: true
       });
-      process.stdout.write("Assistant: ");
+      process.stdout.write("\x1b\n\n[32mAssistant: \n\n\x1b[0m");
+
       chat_stream.on('content', (delta, snapshot) => {
         process.stdout.write(delta);
       });
@@ -33,24 +35,74 @@ async function sendDataToChatGPT(messages, data, config) {
       const chatCompletion = await chat_stream.finalChatCompletion();
 
       
-
+      const chatResponse = chatCompletion.choices[0].message.content;         
       
-      return chatCompletion.choices[0].message.content;
+      
+      console.log("\n\n");
+      return chatResponse;
+      
+      
+      
   } catch (error) {
       console.error(`❌ Error sending data to ChatGPT: ${error.message}`);
       return '';
   }
 }
 
+
+async function handleChatIteration(messages, userInput, config, isFirstLoop = false) {
+  messages.push({ role: 'user', content: userInput });
+  
+  // First call to ChatGPT without filters
+  var chatResponse = await sendDataToChatGPT(messages, userInput, config);
+
+  messages.push({ role: 'assistant', content: chatResponse });
+  
+  // Sequentially apply each filter
+  if (config.filters && isFirstLoop) {
+      for (let filter of config.filters) {
+          // Create an array of messages for each filter
+          function substitutePlaceholders(str, values) {
+            return str.replace(/\{(\w+)\}/g, (match, key) => values[key] || match);
+        }
+        
+        
+        let values = {
+            prevResponse: chatResponse
+            
+        };
+        
+        
+          let filterMessages = filter.messages.map(msg => ({
+              role: msg.role, 
+              content: substitutePlaceholders(msg.content, values)
+          }));
+          
+          // Call ChatGPT with the filter messages
+          for (let filteredMessage of filterMessages){
+            messages.push(filteredMessage)
+            }
+          chatResponse = await sendDataToChatGPT(messages, userInput, config);
+
+          messages.push({ role: 'assistant', content: chatResponse });
+      }
+  } 
+
+  
+  return messages;
+}
+
+
 export default async function chatLoop(data, path=null) {
   const config = path ? await loadConfig(path) : null;
+  
 
   const rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout
   });
 
-  let messages = config && config.messages ? [...config.messages] : [ 
+  var messages = config && config.messages ? [...config.messages] : [ 
     {
     role: 'user', content: "You are a helpful assistant."
     },
@@ -59,6 +111,8 @@ export default async function chatLoop(data, path=null) {
      }
   ];
 
+  
+
   var isFirstLoop = true
 
   while (true) {
@@ -66,9 +120,9 @@ export default async function chatLoop(data, path=null) {
       config.prompt ? config.prompt+`
       
       `+data : data :
-      await new Promise(resolve => rl.question("You: ", resolve))
+      await new Promise(resolve => rl.question("\x1b\n\n[34mYou: \n\n\x1b[0m", resolve))
       ;
-      isFirstLoop = false
+      
 
       if (userInput.toLowerCase() === 'exit()') {
           var to_push = []
@@ -89,9 +143,13 @@ export default async function chatLoop(data, path=null) {
           break;
       }
 
-      messages.push({ role: 'user', content: userInput });
-      const chatResponse = await sendDataToChatGPT(messages, userInput, config);
-      messages.push({ role: 'assistant', content: chatResponse });
+      
+
+      var messages = await handleChatIteration(messages, userInput, config, isFirstLoop);
+      isFirstLoop = false
+      
+
+
   }
 
   rl.close();

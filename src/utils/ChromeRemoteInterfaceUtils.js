@@ -124,7 +124,7 @@ export async function processTabs(endpoint, dbConfig, filePath, chatGPTPrompt,sc
                     }
             }
         }
-        if (combinedData || chatGPTpath) {
+        if (combinedData || chatGPTpath) {      
             
             await chatLoop(combinedData,chatGPTpath ? chatGPTpath : null);
             

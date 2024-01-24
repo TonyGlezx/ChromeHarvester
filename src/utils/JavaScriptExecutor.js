@@ -12,8 +12,11 @@ export default async function executeJavaScript(scriptContent, tabId) {
         await Runtime.enable();
 
         // Execute the script
-        await Runtime.evaluate({ expression: scriptContent });
+        const response = await Runtime.evaluate({ expression: scriptContent });
+
         console.log(`✔️ Executed script on tab with id ${tabId}`);
+        console.log(`✔️ Script response:`);
+        console.log(response);
     } catch (error) {
         console.error(`❌ Error executing script on tab with id ${tabId}: ${error.message}`);
     } finally {
